@@ -1,3 +1,10 @@
-<h2 id="title">Welcome to Ember</h2>
+<h2 id="title">Simple usage</h2>
+{{yasgui-integration}}
 
-{{outlet}}
+
+<h2>Extended usage</h2>
+{{#yasgui-integration as |yasgui|}}
+  {{input type='text' value=endpoint}}
+  {{yasgui.editor endpoint=endpoint}}
+  {{yasgui.results}}
+{{/yasgui-integration}}

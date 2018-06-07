@@ -1,0 +1,10 @@
+{{#if hasBlock}}
+  {{yield (hash
+    editor=(component 'yasgui-query-editor' resultHandler=(action 'setResult'))
+    results=(component 'yasgui-result-view' yasrInit=(action 'yasrCallback'))
+    )
+  }}
+{{else}}
+  {{yasgui-query-editor resultHandler=(action 'setResult')}}
+  {{yasgui-result-view yasrInit=(action 'yasrCallback')}}
+{{/if}}

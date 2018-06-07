@@ -14,5 +14,10 @@ module.exports = function(defaults) {
     behave. You most likely want to be modifying `./index.js` or app's build file
   */
 
+  app.import('node_modules/yasgui-yasqe/dist/yasqe.bundled.min.js');
+  app.import('node_modules/yasgui-yasqe/dist/yasqe.css');
+  app.import('node_modules/yasgui-yasr/dist/yasr.bundled.min.js');
+  app.import('node_modules/yasgui-yasr/dist/yasr.css');
+
   return app.toTree();
 };

@@ -1,7 +1,7 @@
 ember-cli-yasgui
 ==============================================================================
 
-[Short description of the addon.]
+Ember wrapper for [http://about.yasgui.org](YASGUI). This addon provides an components to interact with yasgui from ember. 
 
 Installation
 ------------------------------------------------------------------------------
@@ -14,8 +14,23 @@ ember install ember-cli-yasgui
 Usage
 ------------------------------------------------------------------------------
 
-[Longer description of how to use the addon in apps.]
+The following components are available:
+* `yasgui-integration`
+```
+// simple usage
+{{yasgui-integration}}
 
+// extended usage
+{{#yasgui-integration as |yasgui|}}
+  {{input type='text' value='http://dbpedia.org/sparql' onchange=(action (mut 'endpoint'))}}
+  {{yasgui.query endpoint=endpoint}}
+  {{yasgui.results}}
+{{/yasqui-integration}}
+
+```
+* `yasgui-query-editor`
+
+* `yasgui-result-view`
 
 Contributing
 ------------------------------------------------------------------------------
