@@ -6,15 +6,18 @@ export default Component.extend({
   init() {
     this._super(...arguments);
     this.endpoint = 'http://dbpedia.org/sparql';
+    this.headers = {};
   },
   didUpdateAttrs() {
     this.yasqe.options.sparql.endpoint = this.endpoint;
+    this.yasqe.options.sparql.headers = this.headers;
   },
   didInsertElement() {
     const yasqe =  YASQE(this.element, {
-	    sparql: {
-		    showQueryButton: true,
-        endpoint: this.endpoint
+      sparql: {
+        showQueryButton: true,
+        endpoint: this.endpoint,
+        headers: this.headers
       }
     });
     this.set('yasqe', yasqe);
