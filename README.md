@@ -30,10 +30,10 @@ The following components are available:
 
 // extended usage
 {{#yasgui-integration as |yasgui|}}
-  {{input type='text' value='http://dbpedia.org/sparql' onchange=(action (mut 'endpoint'))}}
-  {{yasgui.query endpoint=endpoint}}
+  {{input type='text' value=endpoint onchange=(action (mut endpoint))}}
+  {{yasgui.editor endpoint=endpoint}}
   {{yasgui.results}}
-{{/yasqui-integration}}
+{{/yasgui-integration}}
 
 ```
 * `yasgui-query-editor`
